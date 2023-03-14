@@ -7,17 +7,16 @@ export const createReview = async (req, res) => {
   const token = req.cookies.accessToken;
 
   jwt.verify(token, process.env.JWT_KEY, async (err, payload) => {
-    const user = await User.findById(payload.id);
-    if (user.isSeller)
-      res.status(402).send("You cant leave a review as a seller");
-    const newReview = new Review({
-      userId: user._id,
-      gigId: req.body.gigId,
-      desc: req.body.desc,
-      star: req.body.star,
-    });
-
     try {
+      const user = await User.findById(payload.id);
+      if (user.isSeller)
+        res.status(402).send("You cant leave a review as a seller");
+      const newReview = new Review({
+        userId: user._id,
+        gigId: req.body.gigId,
+        desc: req.body.desc,
+        star: req.body.star,
+      });
       const review = await Review.findOne({
         gigId: req.body.gigId,
         userId: user._id,
@@ -26,11 +25,11 @@ export const createReview = async (req, res) => {
       await Gig.findByIdAndUpdate(req.body.gigId, {
         $inc: { totalStars: req.body.star, starNumber: 1 },
       });
+      const savedReview = await newReview.save();
+      res.status(201).send(savedReview);
     } catch (err) {
       res.send(err);
     }
-    const savedReview = await newReview.save();
-    res.status(201).send(savedReview);
   });
 };
 export const getReview = async (req, res) => {

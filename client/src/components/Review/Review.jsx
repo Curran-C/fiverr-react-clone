@@ -24,10 +24,6 @@ const Review = ({ review }) => {
         <div className="info">
           <span>{user.username}</span>
           <div className="country">
-            <img
-              src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png"
-              alt=""
-            />
             <span>{user.country}</span>
           </div>
         </div>
