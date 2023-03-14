@@ -1,0 +1,98 @@
+.message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .container {
+        width: 1400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .breadcrumbs {
+            font-weight: 300;
+            font-size: 14px;
+            color: #555;
+            width: 100%;
+        }
+        
+        .messages {
+            width: 80%;
+            overflow: scroll;
+            overflow-x: hidden;
+            height: 500px;
+            margin: 30px 0px;
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            padding: 0px 30px;
+            .item {
+                width: 50%;
+                max-width: 600px;
+                display: flex;
+                align-items: flex-start;
+                // justify-content: flex-start;
+                gap: 20px;
+                &.owner {
+                    flex-direction: row-reverse;
+                    display: flex;
+                    align-self: flex-end;
+                    p {
+                        border-radius: 20px 0px 20px 20px;
+                        background-color: royalblue;
+                        color: white;
+                        box-shadow: -5px 5px 10px lightgray;
+
+                    }
+                }
+                img {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+                p {
+                    border: none;
+                    box-shadow: 5px 5px 10px lightgray;
+                    padding: 30px;
+                    background-color: rgb(247, 243, 243);
+                    border-radius: 0px 20px 20px 20px;
+                    color: gray;
+                    font-size: 16px;
+                    font-weight: 300;
+                    line-height: 20px;
+
+                }
+            }
+        }
+        hr {
+            height: 0;
+            border: 0.5px solid rgb(234, 234, 234);
+            margin-bottom: 30px;
+            width: 70%;
+        }
+        .write {
+            display: flex;
+            width: 70%;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 60px;
+            textarea {
+                width: 80%;
+                height: 100px;
+                padding: 10px;
+                border: 1px solid lightgray;
+                border-radius: 10px;
+            }
+            button {
+                background-color: #1dbf73;
+                padding :15px;
+                color: white;
+                font-weight: 500;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                width: 130px;
+            }
+        }
+    }
+}

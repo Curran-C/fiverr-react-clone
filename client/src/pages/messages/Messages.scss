@@ -1,0 +1,50 @@
+.messages {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    .container {
+        width: 1400px;
+        padding: 50px 0px;
+        table {
+            width: 100%;
+            tr {
+                height: 100px;
+                th {
+                    text-align: left;
+                }
+                td {
+                    padding: 20px;
+                    &:first-child {
+                        font-weight: 500;
+                    }
+                    &:nth-child(2), &:nth-child(3) {
+                        color: gray;
+                    }
+                    .message {
+                        height: 20px;
+                        cursor: pointer;
+                    }
+                    button {
+                        color: white;
+                        background-color: #1bdf73;
+                        font-weight: 500;
+                        font-size: 15px;
+                        height: 40px;
+                        padding: 5px 10px;
+                        border: 1px solid white;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        display: none;
+                    }
+                    
+                }
+                &.active {
+                    background-color: #1dbf730f;
+                    button {
+                        display: block
+                    }
+                }
+            }
+        }
+    }
+}

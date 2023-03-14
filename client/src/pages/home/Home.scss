@@ -1,0 +1,105 @@
+.home {
+    .trustedBy {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fafafa;
+        height: 100px;
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin: 30px;
+            span {
+                color: lightgray;
+                font-weight: 500;
+                font-size: 16px;
+                letter-spacing: 1px;
+            }
+            img {
+                height: 50px;
+            }
+        }
+    }
+
+    .features {
+        display: flex;
+        justify-content: center;
+        background-color: #f1fdf7;
+        padding: 100px 0px;
+
+        &.darkBlue {
+            background-color: #0d084d;
+            
+                    h1 {
+                        color: white !important;
+                    }
+                    p {
+                        color: white !important;
+                    }
+                    .title {
+                        font-weight: 300;
+                        font-size: 14px;
+                    }
+        }
+        .container {
+            display: flex;
+            width: 1400px;
+            justify-content: space-evenly;
+            align-items: center ;
+            .left {
+                flex: 2;
+                .title {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+                    margin-top: 30px;
+                    gap: 10px;
+                    span {
+                        font-weight: 600;
+                        font-size: 18px;
+                        color: gray;
+                    }
+                    img {
+                        height: 24px;
+                        width: 24px;
+                    }
+                }
+                p{
+                    color: gray;
+                    font-size: 15px;
+                    font-weight: 300;
+                    letter-spacing: 1px;
+                }
+                h1 {
+                    margin-bottom: 20px;
+                    i {
+                        font-weight: 300;
+                    }
+                }
+                button {
+                    width: max-content;
+                    height: 35px;
+                    padding: 10px 20px;
+                    background-color: #1dbf73;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    font-weight: 500;
+                    letter-spacing: 1px;
+                    cursor: pointer;
+                }
+            }
+        
+            .right {
+                flex: 3;
+                video {
+                    width: 720px;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
