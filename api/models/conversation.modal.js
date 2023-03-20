@@ -32,7 +32,7 @@ const ConversationSchema = new Schema(
     },
   },
   {
-    timeseries: true,
+    timestamps: true,
   }
 );
 

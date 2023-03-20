@@ -9,7 +9,7 @@ import cors from "cors";
 import userRoute from "../api/routes/user.route.js";
 import conversationRoute from "../api/routes/conversation.route.js";
 import gigRoute from "../api/routes/gig.route.js";
-import messageRoute from "../api/routes/user.route.js";
+import messageRoute from "../api/routes/message.route.js";
 import orderRoute from "../api/routes/order.route.js";
 import reviewsRoute from "../api/routes/reviews.route.js";
 import authRoute from "../api/routes/auth.route.js";
@@ -26,10 +26,11 @@ const connect = async () => {
   }
 };
 
+
 //(middleware)
 app.use(express.json()); //letting application accept input from front end
 app.use(cookieParser()); //letting broswer use and save cookies
-app.use(cors({ origin: "http://127.0.0.1:5173", credentials: true })); //removes cors error, allows backend to be accessed from different port, credentials: true allows cookies to be used
+app.use(cors({ origin: "http://localhost:5173", credentials: true })); //removes cors error, allows backend to be accessed from different port, credentials: true allows cookies to be used
 
 //routes
 app.use("/api/users", userRoute);

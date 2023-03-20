@@ -3,7 +3,7 @@ import { Schema } from "mongoose";
 
 const MessageSchema = new Schema(
   {
-    ConversationId: {
+    conversationId: {
       type: String,
       required: true,
     },

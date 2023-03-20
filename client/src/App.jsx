@@ -11,10 +11,12 @@ import Message from "./pages/message/Message";
 import Messages from "./pages/messages/Messages";
 import MyGigs from "./pages/myGigs/MyGigs";
 import Orders from "./pages/orders/Orders";
-
-import "./App.scss";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
+import Success from "./pages/success/Success";
+import Pay from "./pages/pay/Pay";
+
+import "./App.scss";
 
 function App() {
   const Layout = () => {
@@ -42,6 +44,8 @@ function App() {
         { path: "/message/:id", element: <Message /> },
         { path: "/login", element: <Login /> },
         { path: "/register", element: <Register /> },
+        { path: "/success", element: <Success /> },
+        { path: "/pay/:id", element: <Pay /> },
       ],
     },
   ]);

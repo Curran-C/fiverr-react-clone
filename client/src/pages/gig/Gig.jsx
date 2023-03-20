@@ -1,7 +1,7 @@
 import axios from "axios";
 import Slider from "infinite-react-carousel";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Reviews from "../../components/Reviews/Reviews";
 import "./Gig.scss";
 
@@ -135,7 +135,9 @@ const Gig = () => {
                     </div>
                   ))}
                 </div>
-                <button>Continue</button>
+                <Link to={`/pay/${id}`}>
+                  <button>Continue</button>
+                </Link>
               </div>
             </div>
           </div>

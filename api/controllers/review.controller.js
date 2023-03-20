@@ -28,7 +28,7 @@ export const createReview = async (req, res) => {
       const savedReview = await newReview.save();
       res.status(201).send(savedReview);
     } catch (err) {
-      res.send(err);
+      res.status(500).send(err.response.data);
     }
   });
 };
