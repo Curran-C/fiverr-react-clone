@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { upload } from "../../../../api/utils/upload";
 
 import "./Register.scss";
 
@@ -44,21 +45,21 @@ function Register() {
       console.log(err);
     }
   };
-  const upload = async (file) => {
-    const data = new FormData();
-    data.append("file", file);
-    data.append("upload_preset", "fiverr");
+  // const upload = async (file) => {
+  //   const data = new FormData();
+  //   data.append("file", file);
+  //   data.append("upload_preset", "fiverr");
 
-    try {
-      const res = await axios.post(
-        "https://api.cloudinary.com/v1_1/dndcersc4/upload",
-        data
-      );
-      return res.data.url;
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  //   try {
+  //     const res = await axios.post(
+  //       "https://api.cloudinary.com/v1_1/dndcersc4/upload",
+  //       data
+  //     );
+  //     return res.data.url;
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
   return (
     <div className="register">

@@ -29,7 +29,10 @@ const Gigs = () => {
       const min = minRef.current.value;
       const max = maxRef.current.value;
       const sort = selectedMenuItem === "Date" ? "createdAt" : "price";
-      const search = location.search.slice(1, -1);
+      const search = location.search
+        .slice(1, -1)
+        .concat(location.search.slice(-1));
+      console.log(search);
       try {
         const res = await axios.get(
           `http://localhost:8800/api/gig/gigs?${search}&min=${min}&max=${max}&sort=${sort}`

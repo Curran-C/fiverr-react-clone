@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./Featured.scss";
 const Featured = () => {
+  //states and vars
+  const [input, setInput] = useState("");
+  const navigate = useNavigate();
+
+  //functions
+  const handleSumbit = () => {
+    navigate(`/gigs?search=${input}`);
+  };
+
   return (
     <div className="featured">
       <div className="container">
@@ -15,9 +25,10 @@ const Featured = () => {
               <input
                 type="text"
                 placeholder="Try building your own mobile app"
+                onChange={(e) => setInput(e.target.value)}
               />
             </div>
-            <button>Search</button>
+            <button onClick={handleSumbit}>Search</button>
           </div>
           <div className="popular">
             <span>Popular:</span>
